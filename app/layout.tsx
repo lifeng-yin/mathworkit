@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/react";
 import cx from "classnames";
 import { sfPro, inter } from "./fonts";
 import Nav from "@/components/layout/nav";
-import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 
 export const metadata = {
@@ -29,7 +28,6 @@ export default async function RootLayout({
         <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
           {children}
         </main>
-        <Footer />
         <Analytics />
       </body>
     </html>
