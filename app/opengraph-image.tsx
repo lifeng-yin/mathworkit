@@ -2,7 +2,7 @@
 import { ImageResponse } from "next/server";
 
 export const runtime = "edge";
-export const alt = "Precedent - Building blocks for your Next.js project";
+export const alt = "mathworkit - Building blocks for your Next.js project";
 export const contentType = "image/png";
 
 export default async function OG() {
@@ -27,7 +27,7 @@ export default async function OG() {
       >
         <img
           src={`https://${process.env.VERCEL_URL || "mathworkit.vercel.app"}/logo.png`}
-          alt="Precedent Logo"
+          alt="mathworkit Logo"
           tw="w-20 h-20 mb-4 opacity-95"
         />
         <h1
@@ -42,7 +42,7 @@ export default async function OG() {
             letterSpacing: "-0.02em",
           }}
         >
-          Precedent
+          mathworkit
         </h1>
       </div>
     ),
