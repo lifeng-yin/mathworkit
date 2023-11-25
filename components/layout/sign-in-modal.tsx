@@ -7,7 +7,6 @@ import {
   useCallback,
   useMemo,
 } from "react";
-import { LoadingDots, Google } from "@/components/shared/icons";
 import Image from "next/image";
 
 const SignInModal = ({
@@ -52,11 +51,9 @@ const SignInModal = ({
               signIn("google");
             }}
           >
-            {signInClicked ? (
-              <LoadingDots color="#808080" />
+            {signInClicked ? ("..."
             ) : (
               <>
-                <Google className="h-5 w-5" />
                 <p>Sign In with Google</p>
               </>
             )}
