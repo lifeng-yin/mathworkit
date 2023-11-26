@@ -11,17 +11,15 @@ export default function Dashboard() {
     })
     return <main>
         <h1 className="text-[40px] font-bold">Dashboard</h1>
-        <table className='mb-8'><tbody>
+        {Object.keys(notes).length > 0 ? <table className='mb-8'><tbody>
             <tr>
                 <th>Note title</th>
-                <th>View</th>
                 <th>Edit</th> 
                 <th>Delete</th>
             </tr>
             { Object.entries(notes).map((note: any) => {
                 return <tr>
                     <td>{note[1].title || 'Untitled'}</td>
-                    <td><Link href={`http://localhost:3000/view/${note[0]}`}>View</Link></td>
                     <td><Link href={`http://localhost:3000/edit/${note[0]}`}>Edit</Link></td>
                     <td><button 
                         className='px-4 py-2 rounded-lg bg-red-600 text-white'
@@ -36,6 +34,8 @@ export default function Dashboard() {
                 </tr>
             })}
         </tbody></table>
+        : <p className='mb-4'>No notes. Click on the button below to create one!</p>
+        }
         <Link className='w-48  bg-blue-500 translate-y-20 px-6 py-2 text-white rounded-lg mt-40 hover:bg-blue-600' href="/edit/593729">Create a new note</Link>
     </main>
 }

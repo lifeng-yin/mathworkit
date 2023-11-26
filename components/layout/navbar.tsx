@@ -28,7 +28,7 @@ export default function NavBar({ session }: { session: Session | null }) {
               alt="mathworkit logo"
               width="30"
               height="30"
-              className="mr-2 rounded-sm"
+              className="ml-2 mr-2"
             ></Image>
             <p className="text-blue-500">mathworkit</p>
           </Link>
