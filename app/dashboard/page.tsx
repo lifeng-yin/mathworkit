@@ -23,12 +23,16 @@ export default function Dashboard() {
                     <td>{note[1].title || 'Untitled'}</td>
                     <td><Link href={`http://localhost:3000/view/${note[0]}`}>View</Link></td>
                     <td><Link href={`http://localhost:3000/edit/${note[0]}`}>Edit</Link></td>
-                    <td><button className='px-4 py-2 rounded-lg bg-red-600 text-white'
-                    onClick={oldNotes => {
-                        const copy = {...oldNotes}
-                        delete copy[note[0]]
-                        return copy
-                    }}>Delete</button></td>
+                    <td><button 
+                        className='px-4 py-2 rounded-lg bg-red-600 text-white'
+                        onClick={() => {
+                            setNotes(oldNotes => {
+                                const copy = {...oldNotes}
+                                delete copy[note[0]]
+                                return copy
+                            })
+                        }}
+                    >Delete</button></td>
                 </tr>
             })}
         </tbody></table>

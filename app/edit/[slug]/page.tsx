@@ -13,9 +13,11 @@ export default function Page({ params }: { params: { slug: string } }) {
         defaultValue: {}
     })
 
-    notes[params.slug] = {
-        title: '',
-        sections: []
+    if (!notes[params.slug]) {
+        notes[params.slug] = {
+            title: '',
+            sections: []
+        }
     }
 
     const [title, setTitle] = useState(notes[params.slug].title)
