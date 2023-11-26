@@ -5,7 +5,7 @@ import katex from 'katex';
 import { getCodeString } from 'rehype-rewrite';
 import './style.scss'
 
-const Editor = ({ text, setText }: { text: string, setText: Dispatch<SetStateAction<string>> }) => {
+const Editor = ({ text, setText }: { text: string, setText: Function }) => {
     return <MDEditor
             data-color-mode="light"
             value={text}
