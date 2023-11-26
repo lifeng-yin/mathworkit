@@ -1,0 +1,14 @@
+.w-md-editor-toolbar {
+    padding: 10px;
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+    li:not(:first-child) {
+        margin-left: 8px; 
+    }
+}
+
+textarea:focus {
+    box-shadow: none !important;
+}
