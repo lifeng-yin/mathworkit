@@ -56,7 +56,7 @@
     "typescript": "5.2.2",
     "use-debounce": "^9.0.4",
     "use-immer": "^0.9.0",
-    "use-local-storage-state": "^19.1.0",
+    "use-local-storage-state": "^17.3.0",
     "vaul": "^0.6.8"
   },
   "devDependencies": {

@@ -1,23 +1,23 @@
 "use client"
 
 import Editor from "@/components/editor/editor";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Select from 'react-select';
 import useLocalStorageState from "use-local-storage-state";
+import { useRouter } from "next/navigation";
 
-const defaultText = `This is to display the 
-\`$c = \\pm\\sqrt{a^2 + b^2}$\`
- in one line
-
-\`\`\`KaTeX
-c = \\pm\\sqrt{a^2 + b^2}
-\`\`\`
-`;
 
 export default function Page({ params }: { params: { slug: string } }) {
+    const router = useRouter()
     const [notes, setNotes] = useLocalStorageState<any>('notes', {
         defaultValue: {}
     })
+
+    notes[params.slug] = {
+        title: '',
+        sections: []
+    }
+
     const [title, setTitle] = useState(notes[params.slug].title)
     const [noteSections, setNoteSections] = useState<object[]>(notes[params.slug].sections)
     const [selectedType, setSelectedType] = useState('text')
@@ -80,6 +80,9 @@ export default function Page({ params }: { params: { slug: string } }) {
                         'sections': noteSections
                     }
                 }))
+    
+                router.push('/dashboard');
+
             }}
         >Save</button>
     </div>)
